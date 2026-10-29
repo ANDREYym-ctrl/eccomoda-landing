@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECCOMODA | Lencería de Lujo & Discreción</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HERO SECTION (Espacios reducidos y elegantes) -->
+    <header class="hero-section text-center text-white py-4">
+        <div class="container py-3" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="mb-3">
+                <img src="assets/logo.png" alt="ECCOMODA - Lencería Exclusiva" class="brand-logo img-fluid">
+            </div>
+            <span class="text-uppercase tracking-widest text-gold fw-bold mb-2 d-block">Colección Privada & Exclusiva del VIEJO JAVI</span>
+            <p class="lead text-light mb-4 mx-auto fst-italic" style="max-width: 600px;">
+                Elegancia que se siente, discreción que enamora. Sensualidad sofisticada diseñada para realzar tu autenticidad.
+            </p>
+            <a href="#contacto" class="btn btn-gold btn-lg px-5 py-3 rounded-pill text-uppercase shadow"> escribele a javi Reclamar Oferta VIP</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE BENEFICIOS (Animación de aparición lateral) -->
+        <section class="container my-5 py-3" aria-label="Beneficios y Confianza">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-6 fw-bold text-gold mb-2">La Experiencia ECCOMODA</h2>
+                <p class="text-muted">Diseñado para tu comodidad, seguridad y máxima confianza</p>
+                <div class="mx-auto mt-2" style="width: 60px; height: 2px; background: var(--gold-primary);"></div>
+            </div>
+            <div id="benefits-container" class="row g-4">
+                <!-- Inyectado por JS con animación -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE VITRINA Y MODELOS (Animación con fade-up) -->
+        <section class="py-5" style="background-color: #080808;" aria-label="Catálogo de Modelos">
+            <div class="container" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="display-6 fw-bold text-gold">Colección Destacada</h2>
+                    <p class="text-muted">Prendas reales seleccionadas para cautivar</p>
+                </div>
+                
+                <!-- Filtros dinámicos -->
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" id="filters-container"></div>
+
+                <div id="products-container" class="row g-4">
+                    <!-- Inyectado por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO / WHATSAPP -->
+        <section id="contacto" class="container my-5 text-center">
+            <div class="p-5 rounded-4 shadow-lg" data-aos="flip-up" data-aos-duration="800" style="background: linear-gradient(145deg, #121212 0%, #2d0b1e 100%); border: 1px solid var(--gold-primary);">
+                <h2 class="display-6 text-gold fw-bold mb-3">Obtén tu Asesoría VIP & Promoción</h2>
+                <p class="text-light mb-4 mx-auto" style="max-width: 600px;">
+                    Escríbenos directamente a WhatsApp. Te brindamos atención confidencial, asesoría personalizada de tallas y acceso inmediato a los descuentos de temporada.
+                </p>
+                <div id="whatsapp-cta-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 border-top border-dark" style="background-color: #050505;">
+        <p class="mb-0 text-muted small">&copy; 2026 ECCOMODA. Todos los derechos reservados. Desarrollado bajo estándares ADSO / SENA.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar animaciones al hacer scroll
+        AOS.init({
+            once: true, // Se anima solo la primera vez que bajas
+            offset: 100, // Margen de activación
+        });
+    </script>
+    <!-- Script Principal -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

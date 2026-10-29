@@ -1,0 +1,130 @@
+:root {
+    --bg-main: #0b0b0b;
+    --bg-card: #141414;
+    --gold-primary: #d4af37;
+    --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+    --text-light: #f8f9fa;
+    --text-muted: #d7dcbc;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    font-family: 'Playfair Display', Georgia, serif;
+    overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.text-gold {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-logo {
+    max-width: 280px; /* Tamaño optimizado para que no ocupe tanto espacio */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.3));
+    transition: transform 0.4s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #000;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    color: #000;
+}
+
+.btn-outline-gold {
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold.active {
+    background: var(--gold-gradient);
+    color: #000;
+    border-color: transparent;
+}
+
+/* Reducción de espacios y padding en la Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, rgba(11, 11, 11, 0.7) 0%, rgba(11, 11, 11, 1) 100%), 
+                url('../assets/modelo/mverde.jpg') center/cover no-repeat;
+    padding: 60px 0 40px 0 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Tarjetas de Beneficios (Marcos 3D) */
+.benefit-3d-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.benefit-3d-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.benefit-circle-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--gold-primary);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    margin: 0 auto 15px auto;
+    transition: transform 0.4s ease;
+}
+
+.benefit-3d-card:hover .benefit-circle-img {
+    transform: scale(1.08);
+}
+
+/* Tarjetas de Modelos / Productos de Lujo */
+.luxury-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.luxury-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.badge-gold {
+    background: var(--gold-gradient);
+    color: #000;
+    font-weight: 600;
+}
+.text-muted, p.text-muted {
+    color: #d1d1d1 !important; /* Gris platino suave, alta visibilidad */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}

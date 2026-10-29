@@ -1,0 +1,49 @@
+{
+  "benefits": [
+    {
+      "id": 1,
+      "title": "Telas Suaves & Cero Transparencias Incómodas",
+      "description": "Textiles importados que cuidan tu piel, con la elasticidad perfecta y el grosor ideal para sentirte segura.",
+      "image": "assets/lenceria/lenazul.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Costuras Invisibles Antifricción",
+      "description": "Olvídate de las marcas en tu piel. Diseñadas anatómicamente para un confort absoluto todo el día.",
+      "image": "assets/lenceria/lenverde.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Elegancia, Lujo y Discreción",
+      "description": "Diseños exclusivos de alta gama que realzan tu silueta con un toque de sofisticación inigualable.",
+      "image": "assets/lenceria/lenmorado.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 101,
+      "name": "Conjunto Sensación Rubí",
+      "category": "conjuntos",
+      "price": "$98.900 COP",
+      "image": "assets/modelo/mrojo.jpg",
+      "promo": "20% OFF en WhatsApp"
+    },
+    {
+      "id": 102,
+      "name": "Bralette Velvet Black",
+      "category": "bralettes",
+      "price": "$55.000 COP",
+      "image": "assets/modelo/mnegro.jpg",
+      "promo": "Envío Gratis"
+    },
+    {
+      "id": 103,
+      "name": "Body Seduction Emerald",
+      "category": "bodys",
+      "price": "$125.000 COP",
+      "image": "assets/modelo/mverde.jpg",
+      "promo": "Promoción VIP"
+    }
+  ],
+  "whatsappNumber": "+573001234567"
+}
