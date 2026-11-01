@@ -39,3 +39,28 @@ El proyecto sigue una **Arquitectura Modular Frontend limpia** basada en el est�
     (Fetch Data)                        (Manipula DOM)
          |                                     |
    [ data.json ]                        [ HTML / CSS ]
+
+   __________________
+   /
+📁 ECOMODA
+ ├── 📁 assets
+ │    ├── 📁 lenceria
+ │    │    ├── 📄 lenazul.jpg
+ │    │    ├── 📄 lenverde.jpg
+ │    │    └── 📄 lenmorado.jpg
+ │    └── 📁 modelo
+ │         ├── 📄 mrojo.jpg
+ │         ├── 📄 mnegro.jpg
+ │         └── 📄 mverde.jpg
+ ├── 📁 css
+ │    └── 📄 styles.css
+ ├── 📁 js
+ │    ├── 📁 data
+ │    │    └── 📄 data.json
+ │    ├── 📁 modules
+ │    │    ├── 📄 apiHandler.js     <-- (Falta crear este)
+ │    │    ├── 📄 filterLogic.js    <-- (Falta crear este)
+ │    │    └── 📄 renderUI.js       <-- (Ya lo tienes)
+ │    └── 📄 main.js
+ ├── 📄 README.md
+ └── 📄 index.html

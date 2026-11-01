@@ -1,6 +1,9 @@
 /**
- * Módulo para la manipulación y renderizado del DOM (RNF-01)
+ * ECCOMODA - Módulo para la manipulación y renderizado del DOM (RNF-01)
+ * Arquitectura Clean Code con ES6 Modules
+ * Estándar IEEE 830 / SENA
  */
+
 export function renderBenefits(benefits) {
     const container = document.getElementById('benefits-container');
     if (!container) return;
@@ -21,7 +24,7 @@ export function renderProducts(products) {
     if (!container) return;
 
     if (products.length === 0) {
-        container.innerHTML = `<p class="text-center text-muted">No se encontraron prendas en esta categoría.</p>`;
+        container.innerHTML = `<p class="text-center text-muted py-4">No se encontraron prendas en esta categoría.</p>`;
         return;
     }
 
@@ -40,20 +43,38 @@ export function renderProducts(products) {
             </div>
         </div>
     `).join('');
+
+    // Re-sincronizar AOS tras inyección dinámica en el DOM
+    if (typeof window !== 'undefined' && window.AOS) {
+        window.AOS.refresh();
+    }
 }
 
 export function renderWhatsAppCTA(whatsappNumber) {
     const container = document.getElementById('whatsapp-cta-container');
-    if (!container) return;
-
+    const floatContainer = document.getElementById('whatsapp-float');
+    
+    const cleanNumber = whatsappNumber ? String(whatsappNumber).replace(/[^0-9]/g, '') : '';
     const message = encodeURIComponent("¡Hola ECCOMODA! Me interesa la colección de lencería de lujo y deseo consultar las promociones VIP.");
-    const url = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${message}`;
+    const url = `https://wa.me/${cleanNumber}?text=${message}`;
 
-    container.innerHTML = `
-        <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg px-5 py-3 rounded-pill text-uppercase shadow-lg">
-            💬 Contactar Asesora por WhatsApp
-        </a>
-    `;
+    // Botón principal de la sección de contacto
+    if (container) {
+        container.innerHTML = `
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg px-5 py-3 rounded-pill text-uppercase shadow-lg">
+                💬 Contactar Asesora por WhatsApp
+            </a>
+        `;
+    }
+
+    // Botón flotante permanente (Sticky)
+    if (floatContainer) {
+        floatContainer.innerHTML = `
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-sticky shadow-lg" aria-label="Escríbenos por WhatsApp">
+                <span style="font-size: 1.3rem;">💬</span> <span>Escríbenos</span>
+            </a>
+        `;
+    }
 }
 
 export function renderErrorMessage(message) {
