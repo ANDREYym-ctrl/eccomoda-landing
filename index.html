@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ECCOMODA - Tienda virtual de lencería de alta gama. Clean Luxury: elegancia luminosa, blanco puro y discreción para realzar tu autenticidad.">
+    <meta name="description" content="ECCOMODA - Tienda virtual de lencería de alta gama y mallas exclusivas. Clean Luxury: elegancia luminosa, confort y discreción.">
     <meta name="theme-color" content="#FFFFFF">
     <title>ECCOMODA | Lencería de Lujo & Discreción</title>
     <!-- Google Fonts -->
@@ -24,7 +24,7 @@
                 <source src="assets/videos/mujervi2.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de vídeo HTML5.
             </video>
-            <!-- Overlay blanco degradado para fusión armónica de bordes con el fondo -->
+            <!-- Overlay blanco degradado para fusión armónica con el fondo luminoso -->
             <div class="hero-white-overlay"></div>
         </div>
 
@@ -37,12 +37,12 @@
                 Elegancia que se siente, discreción que enamora. Sensualidad sofisticada diseñada para realzar tu autenticidad.
             </p>
             <div class="hero-actions mb-4">
-                <a href="#contacto" class="btn btn-gold btn-lg px-5 py-3 rounded-pill text-uppercase shadow-sm">Reclamar Oferta VIP</a>
+                <a href="#promociones" class="btn btn-gold btn-lg px-5 py-3 rounded-pill text-uppercase shadow-sm">Reclamar Oferta VIP</a>
             </div>
 
             <!-- INDICADOR DE SCROLL SUTIL (UX Guiado One-Page) -->
             <div class="scroll-indicator-container pt-3" data-aos="fade-up" data-aos-delay="300">
-                <a href="#beneficios" class="scroll-indicator d-inline-flex flex-column align-items-center text-decoration-none" aria-label="Desliza para descubrir">
+                <a href="#promociones" class="scroll-indicator d-inline-flex flex-column align-items-center text-decoration-none" aria-label="Desliza para descubrir">
                     <span class="scroll-text text-uppercase">Desliza para descubrir</span>
                     <div class="scroll-icon-wrap mt-2">
                         <svg class="scroll-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -55,6 +55,19 @@
     </header>
 
     <main>
+        <!-- SECCIÓN DE PROMOCIONES DE TEMPORADA -->
+        <section id="promociones" class="container my-5 py-3" aria-label="Promociones Exclusivas">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="text-uppercase tracking-widest text-gold fw-bold small d-block mb-1">Ofertas Imperdibles</span>
+                <h2 class="display-6 fw-bold text-dark mb-2 font-serif">Promociones VIP de Temporada</h2>
+                <p class="text-secondary">Aprovecha precios especiales en mallas y lencería seleccionada</p>
+                <div class="mx-auto mt-2 luxury-divider"></div>
+            </div>
+            <div id="promotions-container" class="row g-4">
+                <!-- Inyectado dinámicamente desde data.json por JS -->
+            </div>
+        </section>
+
         <!-- SECCIÓN DE BENEFICIOS (Animación de aparición lateral) -->
         <section id="beneficios" class="container my-5 py-4" aria-label="Beneficios y Confianza">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -64,7 +77,7 @@
                 <div class="mx-auto mt-2 luxury-divider"></div>
             </div>
             <div id="benefits-container" class="row g-4">
-                <!-- Inyectado por JS con animación -->
+                <!-- Inyectado dinámicamente desde data.json por JS con animación -->
             </div>
         </section>
 
@@ -78,11 +91,11 @@
                     <div class="mx-auto mt-2 luxury-divider"></div>
                 </div>
                 
-                <!-- Filtros dinámicos -->
+                <!-- Filtros dinámicos (Classic, Premium, Elite) -->
                 <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" id="filters-container"></div>
 
                 <div id="products-container" class="row g-4">
-                    <!-- Inyectado por JS -->
+                    <!-- Inyectado dinámicamente desde data.json por JS -->
                 </div>
             </div>
         </section>
@@ -96,12 +109,20 @@
                     Escríbenos directamente a WhatsApp. Te brindamos atención confidencial, asesoría personalizada de tallas y acceso inmediato a los descuentos exclusivos de temporada.
                 </p>
                 <div id="whatsapp-cta-container"></div>
+                
+                <!-- Redes Sociales Oficiales @ECCOMODA -->
+                <div id="social-links-container"></div>
             </div>
         </section>
     </main>
 
     <footer class="text-center py-4 border-top border-light-subtle bg-white">
-        <p class="mb-0 text-secondary small">&copy; 2026 ECCOMODA. Todos los derechos reservados. Desarrollado bajo estándares ADSO / SENA.</p>
+        <div class="container">
+            <div class="mb-3">
+                <span class="text-uppercase tracking-widest text-gold fw-bold small">Síguenos en nuestras redes oficiales @ECCOMODA</span>
+            </div>
+            <p class="mb-0 text-secondary small">&copy; 2026 ECCOMODA. Todos los derechos reservados. Desarrollado bajo estándares ADSO / SENA.</p>
+        </div>
     </footer>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP (Sticky) -->

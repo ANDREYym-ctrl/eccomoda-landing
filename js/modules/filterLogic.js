@@ -1,6 +1,6 @@
 import { renderProducts } from './renderUI.js';
 
-export function initFilters(allProducts) {
+export function initFilters(allProducts, whatsappNumber) {
     const filtersContainer = document.getElementById('filters-container');
     if (!filtersContainer) return;
 
@@ -19,10 +19,10 @@ export function initFilters(allProducts) {
 
             const filterValue = e.target.getAttribute('data-filter');
             if (filterValue === 'all') {
-                renderProducts(allProducts);
+                renderProducts(allProducts, whatsappNumber);
             } else {
                 const filtered = allProducts.filter(p => p.category === filterValue);
-                renderProducts(filtered);
+                renderProducts(filtered, whatsappNumber);
             }
         }
     });

@@ -1,12 +1,13 @@
 /**
  * ECCOMODA - Main Entrance File
  * Arquitectura Clean Code con ES6 Modules
- * Estándar IEEE 830 / SENA
+ * Clean Luxury UI | Estándar IEEE 830 / SENA
  */
 
 import { fetchProjectData } from './modules/apiHandler.js';
 import { 
     renderBenefits, 
+    renderPromotions,
     renderProducts, 
     renderWhatsAppCTA, 
     renderErrorMessage 
@@ -15,7 +16,7 @@ import { initFilters } from './modules/filterLogic.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        console.log("🚀 Inicializando ECCOMODA Luxury System...");
+        console.log("🚀 Inicializando ECCOMODA Clean Luxury System...");
 
         // 1. Carga asíncrona de datos desde el JSON (RF-01 / RNF-02)
         const data = await fetchProjectData();
@@ -24,15 +25,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error("El formato del dataset recibido no es válido.");
         }
 
-        // 2. Renderizado dinámico de la interfaz gráfica (UI)
-        renderBenefits(data.benefits);         // Sección de calentamiento (RF-02)
-        renderProducts(data.products);         // Muestra inicial de prendas (RF-03)
-        renderWhatsAppCTA(data.whatsappNumber); // Botón de conversión VIP a WhatsApp (RF-04)
+        // 2. Renderizado de Beneficios (RF-02)
+        renderBenefits(data.benefits);
 
-        // 3. Inicialización de la lógica de filtros dinámicos (RF-02 / RF-03)
-        initFilters(data.products);
+        // 3. Renderizado de Promociones de Temporada (Promo 1, 2, 3)
+        if (data.promotions) {
+            renderPromotions(data.promotions, data.whatsappNumber);
+        }
 
-        console.log("✨ Sistema cargado y renderizado con éxito.");
+        // 4. Renderizado de Catálogo de Productos (Classic, Premium, Elite) (RF-03)
+        renderProducts(data.products, data.whatsappNumber);
+
+        // 5. Configuración de WhatsApp y Redes Sociales @ECCOMODA (RF-04)
+        renderWhatsAppCTA(data.whatsappNumber, data.social);
+
+        // 6. Inicialización de Filtros Dinámicos (RF-02 / RF-03)
+        initFilters(data.products, data.whatsappNumber);
+
+        console.log("✨ Sistema ECCOMODA cargado y renderizado con éxito.");
 
     } catch (error) {
         console.error("❌ Fallo en la inicialización de la aplicación:", error);

@@ -1,49 +1,114 @@
 {
+  "whatsappNumber": "+573124143195",
+  "social": {
+    "instagram": "https://instagram.com/eccomoda",
+    "tiktok": "https://tiktok.com/@eccomoda",
+    "facebook": "https://facebook.com/eccomoda",
+    "handle": "@ECCOMODA"
+  },
+  "promotions": [
+    {
+      "id": 1,
+      "tag": "Más Popular",
+      "offer": "6 x $100.000 mallas",
+      "description": "Lleva 6 mallas de alta calidad en tallas de XS a XXL. Máximo confort y durabilidad.",
+      "badge": "Ahorro Especial"
+    },
+    {
+      "id": 2,
+      "tag": "Esencial",
+      "offer": "3 x $60.000 mallas",
+      "description": "El trío perfecto para tu comodidad diaria con ajuste anatómico impecable.",
+      "badge": "Favorito"
+    },
+    {
+      "id": 3,
+      "tag": "Alta Gama",
+      "offer": "20% en lencería de encaje",
+      "description": "Descuento exclusivo en conjuntos, bralettes y bodys de encaje fino.",
+      "badge": "Exclusivo"
+    }
+  ],
   "benefits": [
     {
       "id": 1,
-      "title": "Telas Suaves & Cero Transparencias Incómodas",
-      "description": "Textiles importados que cuidan tu piel, con la elasticidad perfecta y el grosor ideal para sentirte segura.",
+      "title": "Calidad y confort",
+      "description": "Prendas elaboradas con los más altos estándares textiles para un ajuste anatómico que abraza tu cuerpo.",
       "image": "assets/lenceria/lenazul.jpg"
     },
     {
       "id": 2,
-      "title": "Costuras Invisibles Antifricción",
-      "description": "Olvídate de las marcas en tu piel. Diseñadas anatómicamente para un confort absoluto todo el día.",
+      "title": "Suavidad en cada prenda",
+      "description": "Fibras ultra sedosas y delicadas que miman tu piel sin marcas ni costuras molestas en tu día a día.",
       "image": "assets/lenceria/lenverde.jpg"
     },
     {
       "id": 3,
-      "title": "Elegancia, Lujo y Discreción",
-      "description": "Diseños exclusivos de alta gama que realzan tu silueta con un toque de sofisticación inigualable.",
+      "title": "Discreción en la entrega",
+      "description": "Envíos 100% confidenciales con empaques sellados y neutros, garantizando tu privacidad y seguridad.",
       "image": "assets/lenceria/lenmorado.jpg"
     }
   ],
   "products": [
     {
       "id": 101,
-      "name": "Conjunto Sensación Rubí",
-      "category": "conjuntos",
-      "price": "$98.900 COP",
-      "image": "assets/modelo/mrojo.jpg",
-      "promo": "20% OFF en WhatsApp"
+      "name": "Mallas de xs a xxl",
+      "category": "Classic",
+      "price": "$25.000",
+      "description": "Mallas de alta calidad con ajuste perfecto, compresión suave y máxima resistencia.",
+      "image": "assets/modelo/mnegro.jpg",
+      "promo": "6 x $100.000 mallas",
+      "featured": true
     },
     {
       "id": 102,
-      "name": "Bralette Velvet Black",
-      "category": "bralettes",
-      "price": "$55.000 COP",
-      "image": "assets/modelo/mnegro.jpg",
-      "promo": "Envío Gratis"
+      "name": "Mallas Seamless Soft",
+      "category": "Classic",
+      "price": "$25.000",
+      "description": "Tejido flexible ultra suave y duradero que se adapta a tu silueta sin transparencias.",
+      "image": "assets/lenceria/lenverde.jpg",
+      "promo": "3 x $60.000 mallas",
+      "featured": false
     },
     {
       "id": 103,
+      "name": "Conjunto Encaje Rubí",
+      "category": "Premium",
+      "price": "$98.000",
+      "description": "Lencería fina en encaje delicado y confortable que resalta tu sensualidad.",
+      "image": "assets/modelo/mrojo.jpg",
+      "promo": "20% en lencería de encaje",
+      "featured": true
+    },
+    {
+      "id": 104,
+      "name": "Bralette Velvet Classic",
+      "category": "Premium",
+      "price": "$65.000",
+      "description": "Diseño sofisticado sin aros para un soporte natural y descanso absoluto.",
+      "image": "assets/lenceria/lenazul.jpg",
+      "promo": "20% en lencería de encaje",
+      "featured": false
+    },
+    {
+      "id": 105,
       "name": "Body Seduction Emerald",
-      "category": "bodys",
-      "price": "$125.000 COP",
+      "category": "Elite",
+      "price": "$125.000",
+      "description": "Edición de lujo con detalles traslúcidos que estiliza la figura con distinción.",
       "image": "assets/modelo/mverde.jpg",
-      "promo": "Promoción VIP"
+      "promo": "20% en lencería de encaje",
+      "featured": true
+    },
+    {
+      "id": 106,
+      "name": "Set Imperial Luxury",
+      "category": "Elite",
+      "price": "$135.000",
+      "description": "Prenda de alta costura para momentos especiales con acabados dorados.",
+      "image": "assets/lenceria/lenmorado.jpg",
+      "promo": "Edición Exclusiva",
+      "featured": false
     }
-  ],
-  "whatsappNumber": "+573001234567"
+  ]
 }
