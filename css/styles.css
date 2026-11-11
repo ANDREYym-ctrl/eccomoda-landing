@@ -1,10 +1,24 @@
+/* =========================================
+   ECCOMODA - CLEAN LUXURY STYLESHEET
+   Arquitectura Clean Code Frontend | Mobile-First
+   Estándar IEEE 830 / SENA ADSO
+   ========================================= */
+
 :root {
-    --bg-main: #0b0b0b;
-    --bg-card: #141414;
-    --gold-primary: #d4af37;
-    --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
-    --text-light: #f8f9fa;
-    --text-muted: #d1d1d1;
+    /* Paleta Clean Luxury: Blanco Puro, Luminoso, Confiable y de Alta Gama */
+    --bg-main: #FFFFFF;             /* Blanco puro en todo el cuerpo del sistema */
+    --bg-card: #FFFFFF;             /* Blanco puro para tarjetas */
+    --bg-section-alt: #FAFAFC;      /* Marfil/perla tenue para contrastar el catálogo */
+    --gold-primary: #D4AF37;         /* Dorado metálico noble */
+    --gold-dark: #B8860B;            /* Dorado profundo para contrastes de texto y bordes */
+    --gold-gradient: linear-gradient(135deg, #E6C875 0%, #D4AF37 50%, #B8860B 100%);
+    --text-primary: #1A1A1A;        /* Gris carbón muy oscuro para máxima legibilidad editorial */
+    --text-secondary: #2E2E32;      /* Gris neutro oscuro para subtítulos y descripciones */
+    --text-muted: #6B6B72;          /* Gris sutil para notas y créditos */
+    --border-gold-soft: rgba(212, 175, 55, 0.28);
+    --border-subtle: #ECECEF;
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+    --shadow-card-hover: 0 16px 36px rgba(212, 175, 55, 0.16), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 html {
@@ -13,14 +27,24 @@ html {
 
 body {
     background-color: var(--bg-main);
-    color: var(--text-light);
-    font-family: 'Playfair Display', Georgia, serif;
-    overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+    color: var(--text-secondary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden; /* Previene scroll horizontal accidental */
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
+/* Tipografía de Lujo */
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.sub-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
 }
 
 .text-gold {
@@ -29,59 +53,57 @@ h1, h2, h3 {
     -webkit-text-fill-color: transparent;
 }
 
+.luxury-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold-primary);
+}
+
+/* Logotipo de Autoridad Visual en Cabecera */
 .brand-logo {
-    max-width: 280px;
+    max-width: 400px; /* Tamaño prominente con alta autoridad de marca */
+    width: 92%;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.3));
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 0.24));
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.4s ease;
 }
 
 .brand-logo:hover {
-    transform: scale(1.05);
-}
-
-.btn-gold {
-    background: var(--gold-gradient);
-    color: #000;
-    font-weight: 700;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.btn-gold:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-    color: #000;
-}
-
-.btn-outline-gold {
-    border: 1px solid var(--gold-primary);
-    color: var(--gold-primary);
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-gold:hover, .btn-outline-gold.active {
-    background: var(--gold-gradient);
-    color: #000;
-    border-color: transparent;
+    transform: scale(1.03);
+    filter: drop-shadow(0 6px 24px rgba(212, 175, 55, 0.38));
 }
 
 /* =========================================
-   HERO SECTION CINEMÁTICO CON VÍDEO
+   HERO SECTION CLEAN LUXURY CON VÍDEO EN FONDO BLANCO
    ========================================= */
-.hero-video-container {
+.hero-clean-luxury {
     position: relative;
-    overflow: hidden;
-    min-height: 85vh;
+    background-color: var(--bg-main);
+    min-height: 88vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 70px 0 40px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
 }
 
-.hero-video-bg {
+/* Contenedor del vídeo con aislamiento de eventos */
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Vídeo en bucle con optimización de brillo para fondo blanco */
+.hero-video-white {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,40 +113,155 @@ h1, h2, h3 {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: 0;
-    filter: brightness(0.4); /* Oscurece el vídeo para legibilidad y elegancia */
+    opacity: 0.90;
+    filter: brightness(1.05) contrast(0.98); /* Ilumina el blanco del vídeo */
 }
 
-.hero-overlay {
+/* Overlay blanco degradado radial para integración perfecta sin cortes de borde */
+.hero-white-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(11, 11, 11, 0.4) 0%, rgba(11, 11, 11, 0.85) 100%);
-    z-index: 1;
-}
-
-.z-2 {
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center, 
+        rgba(255, 255, 255, 0.35) 0%, 
+        rgba(255, 255, 255, 0.72) 55%, 
+        rgba(255, 255, 255, 0.98) 100%
+    );
     z-index: 2;
 }
 
+.hero-clean-luxury .hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subtítulo Hero: Montserrat Ligera (peso 300), Espaciada, Limpia y Sin Cursivas */
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.15rem;
+    letter-spacing: 0.6px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 620px;
+}
+
+/* Botones de Lujo */
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #1A1A1A;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.28);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.45);
+    color: #1A1A1A;
+}
+
+.btn-outline-gold {
+    border: 1.5px solid var(--gold-primary);
+    color: var(--gold-dark);
+    background: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover, 
+.btn-outline-gold.active {
+    background: var(--gold-gradient);
+    color: #1A1A1A;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
 /* =========================================
-   TARJETAS DE BENEFICIOS (Marcos 3D)
+   INDICADOR DE SCROLL SUTIL (One-Page UX)
+   ========================================= */
+.scroll-indicator-container {
+    margin-top: 15px;
+}
+
+.scroll-indicator {
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.scroll-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    color: var(--gold-dark);
+}
+
+.scroll-icon-wrap {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold-soft);
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    animation: bounceDown 2s infinite ease-in-out;
+}
+
+.scroll-arrow {
+    stroke: var(--gold-dark);
+    transition: transform 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-icon-wrap {
+    background: var(--gold-gradient);
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+.scroll-indicator:hover .scroll-arrow {
+    stroke: #1A1A1A;
+}
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+/* =========================================
+   TARJETAS DE BENEFICIOS (Clean 3D)
    ========================================= */
 .benefit-3d-card {
     background-color: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 16px;
-    padding: 24px;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid var(--border-gold-soft);
+    border-radius: 18px;
+    padding: 32px 24px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-soft);
 }
 
 .benefit-3d-card:hover {
     transform: translateY(-8px);
     border-color: var(--gold-primary);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.25);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .benefit-circle-img {
@@ -133,89 +270,143 @@ h1, h2, h3 {
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--gold-primary);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-    margin: 0 auto 15px auto;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.22);
+    margin: 0 auto 18px auto;
     transition: transform 0.4s ease;
 }
 
 .benefit-3d-card:hover .benefit-circle-img {
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 /* =========================================
-   TARJETAS DE MODELOS / PRODUCTOS DE LUJO
+   CATÁLOGO Y TARJETAS DE PRODUCTOS DE LUJO
    ========================================= */
+.catalog-section {
+    background-color: var(--bg-section-alt);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
 .luxury-card {
     background-color: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 12px;
+    border: 1px solid var(--border-gold-soft);
+    border-radius: 16px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-soft);
 }
 
 .luxury-card:hover {
     border-color: var(--gold-primary);
     transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.2);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.luxury-card .card-img-top {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.luxury-card:hover .card-img-top {
+    transform: scale(1.04);
+}
+
+.product-price {
+    color: var(--gold-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
 }
 
 .badge-gold {
     background: var(--gold-gradient);
-    color: #000;
-    font-weight: 600;
-}
-
-.text-muted, p.text-muted {
-    color: #d1d1d1 !important; /* Gris platino suave, alta visibilidad */
+    color: #1A1A1A;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================
-   BOTÓN FLOTANTE DE WHATSAPP (STICKY)
+   SECCIÓN DE CONTACTO / VIP
+   ========================================= */
+.contact-card-luxury {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAF8F2 60%, #F5EFE0 100%);
+    border: 1.5px solid var(--gold-primary);
+    box-shadow: 0 14px 40px rgba(212, 175, 55, 0.16), 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================
+   BOTÓN FLOTANTE DE WHATSAPP (Sticky)
    ========================================= */
 #whatsapp-float .btn-whatsapp-sticky {
-    background: #25d366;
-    color: #fff;
+    background: #25D366;
+    color: #FFFFFF;
     border-radius: 50px;
-    padding: 12px 24px;
+    padding: 12px 22px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-    display: flex;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.36);
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     text-decoration: none;
+    border: 2px solid #FFFFFF;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #whatsapp-float .btn-whatsapp-sticky:hover {
-    transform: scale(1.06);
-    color: #fff;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    transform: scale(1.05) translateY(-2px);
+    color: #FFFFFF;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.48);
 }
 
 /* =========================================
    OPTIMIZACIONES MÓVILES (MOBILE-FIRST)
    ========================================= */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .brand-logo {
-        max-width: 210px;
+        max-width: 320px;
     }
 
-    .hero-video-container {
-        min-height: 75vh;
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+    .hero-clean-luxury {
+        min-height: 82vh;
+        padding: 55px 0 35px 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1.02rem;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-logo {
+        max-width: 260px;
+    }
+
+    .hero-clean-luxury {
+        min-height: 78vh;
+        padding: 45px 0 30px 0;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .benefit-3d-card {
+        padding: 24px 18px;
     }
 
     #whatsapp-float {
-        bottom: 16px !important;
-        right: 16px !important;
+        bottom: 18px !important;
+        right: 18px !important;
     }
 
     #whatsapp-float .btn-whatsapp-sticky {
-        padding: 10px 18px;
-        font-size: 0.9rem;
+        padding: 10px 16px;
+        font-size: 0.88rem;
     }
 }
